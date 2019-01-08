@@ -1,20 +1,26 @@
 // from data.js
 var tableData = data;
 
+// YOUR CODE HERE!
+
+//loop through data and append into table on webpage
+
 let tbody = d3.select("tbody");
 
 function table(data) {
   tbody.html("");
-//something is wrong here...
+
   data.forEach((dataRow) => {
     let row = tbody.append("tr");
     Object.values(dataRow).forEach((val) => {
-      let ufoInfo = row.append("td");
-        ufoInfo.text(val);
+      let UFOdata = row.append("td");
+        UFOdata.text(val);
       }
     );
   });
 }
+
+//search through data by date
 
 function buttonClick() {
 
@@ -28,5 +34,4 @@ function buttonClick() {
 }
 d3.selectAll("#filter-btn").on("click", buttonClick);
 table(tableData);
-
-// YOUR CODE HERE!
+;
